@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class InvertedPyramidPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows for the inverted pyramid: ");
+        int rows = scanner.nextInt();
+
+        // Print the inverted pyramid pattern
+        printInvertedPyramid(rows);
+
+        scanner.close();
+    }
+
+    // Function to print the inverted pyramid pattern
+    private static void printInvertedPyramid(int n) {
+        for (int i = n; i >= 1; i--) {
+            // Print spaces
+            for (int j = n - i; j > 0; j--) {
+                System.out.print("  ");
+            }
+
+            // Print '*' in each row
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("* ");
+            }
+
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}
