@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class SquareRootOfPerfectSquare {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a perfect square number: ");
+        int number = scanner.nextInt();
+
+        // Check if the number is a perfect square
+        if (isPerfectSquare(number)) {
+            // Calculate and print both positive and negative square roots
+            double positiveSquareRoot = Math.sqrt(number);
+            double negativeSquareRoot = -Math.sqrt(number);
+
+            System.out.println("Positive Square Root: " + positiveSquareRoot);
+            System.out.println("Negative Square Root: " + negativeSquareRoot);
+        } else {
+            System.out.println("The entered number is not a perfect square.");
+        }
+
+        scanner.close();
+    }
+
+    // Function to check if a number is a perfect square
+    private static boolean isPerfectSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return sqrt * sqrt == num;
+    }
+}
